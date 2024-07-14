@@ -3,8 +3,8 @@ import { Providers } from "@/components/shared/Providers";
 import { Navbar } from "@/components/shared/Navbar";
 
 export const metadata: Metadata = {
-  title: "Marketplace",
-  description: "",
+  title: "Pantaleone.net NFT Artwork Marketplace",
+  description: "The latest artwork available from Pantaleone.net",
 };
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{ paddingBottom: "100px" }}>
+      <body style={{ paddingBottom: "30px" }}>
         <Providers>
           <Navbar />
           {children}
