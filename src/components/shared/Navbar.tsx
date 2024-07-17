@@ -26,27 +26,55 @@ import {
   useActiveWallet,
   useDisconnect,
 } from "thirdweb/react";
-import type { Wallet } from "thirdweb/wallets";
+import { Wallet, createWallet, inAppWallet, walletConnect } from "thirdweb/wallets";
 import { SideMenu } from "./SideMenu";
 
 export function Navbar() {
   const account = useActiveAccount();
   const wallet = useActiveWallet();
+  const defaultwallets = [
+    inAppWallet({
+      auth: {
+        options: [
+          "email",
+          "google",
+          "apple",
+          "facebook",
+          "phone",
+        ],
+      },
+    }),
+    createWallet("io.metamask"),
+    createWallet("com.coinbase.wallet"),
+    walletConnect(),
+  ];
   const { colorMode } = useColorMode();
   return (
     <Box py="30px" px={{ base: "20px", lg: "50px" }}>
       <Flex direction="row" justifyContent="space-between">
         <Box my="auto">
+          <Heading my="inherit"
+            as={Link}
+            href="/"
+            _hover={{ textDecoration: "none" }}
+            bgGradient="linear(to-l, #80D0C7, #0093E9)"
+            bgClip="text"
+            size="lg"
+            fontWeight="bold"
+          >
+            {/* Replace this with your own branding */}
+            marketplace.pantaleone.net
+          </Heading>
           <Heading
             as={Link}
             href="/"
             _hover={{ textDecoration: "none" }}
-            bgGradient="linear(to-l, #7928CA, #FF0080)"
-            bgClip="text"
-            fontWeight="extrabold"
+            size="xs"
+            fontWeight="light"
+            noOfLines={4}
           >
             {/* Replace this with your own branding */}
-            THIRDMART
+            The latest Artificial Intelligence tools, AI agents, automation scripts and NFT artwork available from Pantaleone.net
           </Heading>
         </Box>
         <Box display={{ lg: "block", base: "none" }}>
@@ -55,9 +83,16 @@ export function Navbar() {
             <ProfileButton address={account.address} wallet={wallet} />
           ) : (
             <ConnectButton
+              autoConnect={{ timeout: 15000 }} 
               client={client}
               theme={colorMode}
-              connectButton={{ style: { height: "56px" } }}
+              connectButton={{ label: "Sign In", style: { height: "56px" }, }}
+              connectModal={{
+                size: "compact",
+                showThirdwebBranding: false
+              }}
+              showAllWallets= {false}
+              wallets= {defaultwallets}
             />
           )}
         </Box>
@@ -78,6 +113,23 @@ function ProfileButton({
   const { data: ensName } = useGetENSName({ address });
   const { data: ensAvatar } = useGetENSAvatar({ ensName });
   const { colorMode } = useColorMode();
+  const defaultwallets = [
+    inAppWallet({
+      auth: {
+        options: [
+          "email",
+          "google",
+          "apple",
+          "facebook",
+          "phone",
+        ],
+      },
+    }),
+    createWallet("io.metamask"),
+    createWallet("com.coinbase.wallet"),
+    walletConnect(),
+  ];
+
   return (
     <Menu>
       <MenuButton as={Button} height="56px">
@@ -95,11 +147,22 @@ function ProfileButton({
       <MenuList>
         <MenuItem display="flex">
           <Box mx="auto">
-            <ConnectButton client={client} theme={colorMode} />
+            <ConnectButton
+              autoConnect={{ timeout: 15000 }} 
+              client={client}
+              theme={colorMode}
+              connectButton={{ label: "Sign In", style: { height: "56px" }, }}
+              connectModal={{
+                size: "compact",
+                showThirdwebBranding: false
+              }}
+              showAllWallets= {false}
+              wallets= {defaultwallets}
+            />
           </Box>
         </MenuItem>
         <MenuItem as={Link} href="/profile" _hover={{ textDecoration: "none" }}>
-          Profile {ensName ? `(${ensName})` : ""}
+          View Profile {ensName ? `(${ensName})` : ""}
         </MenuItem>
         <MenuItem
           onClick={() => {

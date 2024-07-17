@@ -27,6 +27,7 @@ import {
   useActiveWallet,
   useDisconnect,
 } from "thirdweb/react";
+import { createWallet, inAppWallet, walletConnect } from "thirdweb/wallets";
 
 export function SideMenu() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -37,6 +38,22 @@ export function SideMenu() {
   const { data: ensAvatar } = useGetENSAvatar({ ensName });
   const { colorMode, toggleColorMode } = useColorMode();
   const wallet = useActiveWallet();
+  const defaultwallets = [
+    inAppWallet({
+      auth: {
+        options: [
+          "email",
+          "google",
+          "apple",
+          "facebook",
+          "phone",
+        ],
+      },
+    }),
+    createWallet("io.metamask"),
+    createWallet("com.coinbase.wallet"),
+    walletConnect(),
+  ];
 
   return (
     <>
@@ -52,19 +69,34 @@ export function SideMenu() {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>
-            <Button height="56px" w="56px" onClick={toggleColorMode} mr="10px">
-              {colorMode === "light" ? <FaRegMoon /> : <IoSunny />}
-            </Button>
+            <ConnectButton
+              autoConnect={{ timeout: 15000 }} 
+              client={client}
+              theme={colorMode}
+              connectButton={{ label: "Sign In", style: { height: "56px" }, }}
+              connectModal={{
+                size: "compact",
+                showThirdwebBranding: false
+              }}
+              showAllWallets= {false}
+              wallets= {defaultwallets}
+            />
+            <Box mt="3">
+            {account && (
+              
+              <Link href="/profile">
+                <Button size="sm">View Profile {ensName ? `(${ensName})` : ""} </Button>
+              </Link>
+            )}
+            </Box>
           </DrawerHeader>
           <DrawerBody>
             <Box>
-              <ConnectButton theme={colorMode} client={client} />
+            <Button height="56px" w="56px" onClick={toggleColorMode} mr="10px">
+              {colorMode === "light" ? <FaRegMoon /> : <IoSunny />}
+            </Button>
             </Box>
-            {account && (
-              <Link href="/profile">
-                Profile {ensName ? `(${ensName})` : ""}
-              </Link>
-            )}
+
           </DrawerBody>
           <DrawerFooter>
             {account && (

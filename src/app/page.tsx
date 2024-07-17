@@ -16,8 +16,8 @@ export default function Home() {
       <Box mt="24px" m="auto">
         <Flex direction="column" gap="4">
           {/* Delete this <Card /> in your own app */}
-          <Heading ml="20px" mt="40px">
-            Trending collections
+          <Heading as="h1" ml="20px" mt="40px">
+            Trending AI and Automation Products
           </Heading>
           <Flex
             direction="row"
@@ -34,8 +34,8 @@ export default function Home() {
                 key={item.address}
                 href={`/collection/${item.chain.id.toString()}/${item.address}`}
               >
-                <Image src={item.thumbnailUrl} />
-                <Text fontSize="large" mt="10px">
+                <Image src={item.thumbnailUrl} alt={item.title} boxSize="300px" borderRadius="10px" mb="10px"/>
+                <Text as="b" fontSize="lg" mt="20px">
                   {item.title}
                 </Text>
               </Link>

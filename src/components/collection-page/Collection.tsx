@@ -41,6 +41,7 @@ export function Collection() {
           <MediaRenderer
             client={client}
             src={thumbnailImage}
+            alt={contractMetadata?.name}
             style={{
               marginLeft: "auto",
               marginRight: "auto",
