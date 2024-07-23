@@ -1,5 +1,5 @@
 import type { Chain } from "thirdweb";
-import { avalancheFuji, polygonAmoy } from "./chains";
+import { polygon } from "./chains";
 
 export type NftContract = {
   address: string;
@@ -20,56 +20,19 @@ export type NftContract = {
  */
 export const NFT_CONTRACTS: NftContract[] = [
   {
-    address: "0x6b869a0cF84147f05a447636c42b8E53De65714E",
-    chain: avalancheFuji,
-    title: "Steakhouse: Liberatorz",
+    address: "0xAd55d0b5043B7b88321bA8542051C90c86A1553E",
+    chain: polygon,
+    title: "Ceramic Color Drips",
     thumbnailUrl:
-      "https://258c828e8cc853bf5e0efd001055fb39.ipfscdn.io/ipfs/bafybeigonh3hde5suwcb3qvkh6ljtvxv7ubfmcqbwfvi3ihoi3igd27jwe/SteakhouseLogo.svg",
+      "https://d391b93f5f62d9c15f67142e43841acc.ipfscdn.io/ipfs/bafybeicqeuohkmkxkfppm25x4dllievly3orupqzodzjg5rbf2n2zcvtbi/ceramic-color-ribbons.png",
     type: "ERC721",
   },
   {
-    address: "0xC5A2c72c581eA4A17e17bEeF38a9597132830401",
-    chain: avalancheFuji,
-    title: "Ugly Waifu",
+    address: "0x0B11A6E240535e9C1A2e86edd5986CED268C6dba",
+    chain: polygon,
+    title: "Gallium Bricks",
     thumbnailUrl:
-      "https://258c828e8cc853bf5e0efd001055fb39.ipfscdn.io/ipfs/bafybeidaadqapi7twzd7pjp24tu4ngsr3teubrhop7hg3jk3oj6lqysfgm/OS-LOGO.png",
-    slug: "ugly-waifu",
+      "https://d391b93f5f62d9c15f67142e43841acc.ipfscdn.io/ipfs/bafybeiferhpauqakzlholexbnf27fipllesicn7ltndi3azhojalobjcym/gallium-triangle.png",
     type: "ERC721",
-  },
-
-  {
-    address: "0x0896Db00D8987Fba2152aa7c14c4255eBC7354cE",
-    chain: avalancheFuji,
-    title: "Unnamed Collection",
-    description: "",
-    thumbnailUrl:
-      "https://258c828e8cc853bf5e0efd001055fb39.ipfscdn.io/ipfs/Qmct2vS78Uwug3zVtqQognskPPRmd4wRQiaDAQWt1kRJws/0.png",
-    slug: "unnamed-collection",
-    type: "ERC721",
-  },
-  {
-    address: "0x0ACaCa3d3F64bb6e6D3564BBc891c58Bd4A4c83c",
-    chain: avalancheFuji,
-    title: "GoroBot",
-    thumbnailUrl:
-      "https://258c828e8cc853bf5e0efd001055fb39.ipfscdn.io/ipfs/bafybeiay3ffxy3os56bvnu5cmq7gids4v6n4hf5nvvcb3gy2dzavi3ltnu/profile.jpg",
-    slug: "gorobot",
-    type: "ERC721",
-  },
-  {
-    address: "0x4b6CDEFF5885A57678261bb95250aC43aD490752",
-    chain: polygonAmoy,
-    title: "Mata NFT",
-    thumbnailUrl:
-      "https://258c828e8cc853bf5e0efd001055fb39.ipfscdn.io/ipfs/bafybeidec7x6bptqmrxgptaedd7wfwxbsccqfogzwfsd4a7duxn4sdmnxy/0.png",
-    type: "ERC721",
-  },
-  {
-    address: "0xd5e815241882676F772A624E3892b27Ff3a449c4",
-    chain: avalancheFuji,
-    title: "Cats (ERC1155)",
-    thumbnailUrl:
-      "https://258c828e8cc853bf5e0efd001055fb39.ipfscdn.io/ipfs/bafybeif2nz6wbwuryijk2c4ayypocibexdeirlvmciqjyvlzz46mzoirtm/0.png",
-    type: "ERC1155",
   },
 ];
