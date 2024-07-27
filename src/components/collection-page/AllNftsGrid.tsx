@@ -10,7 +10,6 @@ import {
   useBreakpointValue,
   Text,
   Button,
-  Select,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import {
@@ -25,7 +24,7 @@ import { MediaRenderer, useReadContract } from "thirdweb/react";
 export function AllNftsGrid() {
   const [itemsPerPage, setItemsPerPage] = useState<number>(20);
   const [currentPageIndex, setCurrentPageIndex] = useState<number>(0);
-  const { nftContract, type, supplyInfo } = useMarketplaceContext();
+  const { nftContract, type, supplyInfo, contractMetadata } = useMarketplaceContext();
   const startTokenId = supplyInfo?.startTokenId ?? 0n;
   const totalItems: bigint = supplyInfo
     ? supplyInfo.endTokenId - supplyInfo.startTokenId + 1n
@@ -78,7 +77,11 @@ export function AllNftsGrid() {
               mt="10px"
             >
               <Flex direction="column">
-                <MediaRenderer client={client} src={item.metadata.image} alt={item.metadata?.name}/>
+                <MediaRenderer 
+                  client={client} 
+                  src={item.metadata.image} 
+                  alt={contractMetadata?.name}
+                />
                 <Text as="b" fontSize="lg" mt="10px">{item.metadata?.name ?? "Unknown item"}</Text>
               </Flex>
             </Box>

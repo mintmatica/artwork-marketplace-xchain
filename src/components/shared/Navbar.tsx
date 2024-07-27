@@ -74,7 +74,7 @@ export function Navbar() {
             noOfLines={4}
           >
             {/* Replace this with your own branding */}
-            The latest Artificial Intelligence tools, AI agents, automation scripts and NFT artwork available from Pantaleone.net
+            The latest AI tools, agents, automation scripts and NFT artwork.
           </Heading>
         </Box>
         <Box display={{ lg: "block", base: "none" }}>

@@ -15,7 +15,6 @@ export default function Home() {
     <Flex>
       <Box mt="24px" m="auto">
         <Flex direction="column" gap="4">
-          {/* Delete this <Card /> in your own app */}
           <Heading as="h1" ml="20px" mt="40px">
             Trending AI and Automation Products
           </Heading>
@@ -34,7 +33,7 @@ export default function Home() {
                 key={item.address}
                 href={`/collection/${item.chain.id.toString()}/${item.address}`}
               >
-                <Image src={item.thumbnailUrl} alt={item.title} boxSize="300px" borderRadius="10px" mb="10px"/>
+                <Image src={item.thumbnailUrl} alt={item.title} boxSize="280px" borderRadius="10px" mb="10px"/>
                 <Text as="b" fontSize="lg" mt="20px">
                   {item.title}
                 </Text>
@@ -46,41 +45,3 @@ export default function Home() {
     </Flex>
   );
 }
-
-// Delete this in your own app
-const _latestUpdates: Array<{ title: string; bullet_points: string[] }> = [
-  {
-    title: "Latest software",
-    bullet_points: [
-      "Shipped with the latest thirdweb SDK (v5) and Next.js 14 (App router)",
-    ],
-  },
-  {
-    title: "Multi-chain",
-    bullet_points: [
-      "Seamlessly trade and browse items on multiple chains",
-      "You'd have to deploy a thirdweb Marketplace V3 contract on each of the chains you want to support",
-    ],
-  },
-  {
-    title: "Multiple collections supported",
-    bullet_points: [
-      "The new template now supports multiple collections, you can view your owned NFTs and your listings",
-    ],
-  },
-  {
-    title: "Upcoming features",
-    bullet_points: [
-      "Select different currencies (ERC20) when creating listings",
-      "UI for English Auctions",
-    ],
-  },
-  {
-    title: "Contribute",
-    bullet_points: [
-      "We welcome all contributions from the community.",
-      "Found a bug or have some suggestions? Create a GitHub issue!",
-      "Repo: https://github.com/thirdweb-example/marketplace-template",
-    ],
-  },
-];

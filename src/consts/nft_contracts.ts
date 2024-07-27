@@ -24,7 +24,7 @@ export const NFT_CONTRACTS: NftContract[] = [
     chain: polygon,
     title: "Ceramic Color Drips",
     thumbnailUrl:
-      "https://d391b93f5f62d9c15f67142e43841acc.ipfscdn.io/ipfs/bafybeicqeuohkmkxkfppm25x4dllievly3orupqzodzjg5rbf2n2zcvtbi/ceramic-color-ribbons.png",
+      "https://ipfs.io/ipfs/bafybeicqeuohkmkxkfppm25x4dllievly3orupqzodzjg5rbf2n2zcvtbi/ceramic-color-ribbons.png",
     type: "ERC721",
   },
   {
@@ -32,7 +32,7 @@ export const NFT_CONTRACTS: NftContract[] = [
     chain: polygon,
     title: "Gallium Bricks",
     thumbnailUrl:
-      "https://d391b93f5f62d9c15f67142e43841acc.ipfscdn.io/ipfs/bafybeiferhpauqakzlholexbnf27fipllesicn7ltndi3azhojalobjcym/gallium-triangle.png",
+      "https://ipfs.io/ipfs/bafybeiferhpauqakzlholexbnf27fipllesicn7ltndi3azhojalobjcym/gallium-triangle.png",
     type: "ERC721",
   },
 ];
