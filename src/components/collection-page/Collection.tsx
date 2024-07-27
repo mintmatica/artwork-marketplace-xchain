@@ -46,8 +46,8 @@ export function Collection() {
               marginLeft: "auto",
               marginRight: "auto",
               borderRadius: "20px",
-              width: "200px",
-              height: "200px",
+              width: "400px",
+              height: "260px",
             }}
           />
           <Heading mx="auto">
@@ -65,8 +65,9 @@ export function Collection() {
 
           <Tabs
             variant="soft-rounded"
+            size="lg"
             mx="auto"
-            mt="20px"
+            mt="40px"
             onChange={(index) => setTabIndex(index)}
             isLazy
           >
