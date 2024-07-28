@@ -23,7 +23,7 @@ export function Collection() {
 
   // In case the collection doesn't have a thumbnail, we use the image of the first NFT
   const { data: firstNFT, isLoading: isLoadingFirstNFT } = useReadContract(
-    type === "ERC1155" ? getNFT1155 : getNFT721,
+    type === "ERC721" ? getNFT721 : getNFT1155,
     {
       contract: nftContract,
       tokenId: 0n,
