@@ -1,3 +1,4 @@
+"use client";
 import { MediaRenderer, useReadContract } from "thirdweb/react";
 import { getNFT as getNFT721 } from "thirdweb/extensions/erc721";
 import { getNFT as getNFT1155 } from "thirdweb/extensions/erc1155";
