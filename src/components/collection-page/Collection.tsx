@@ -47,12 +47,12 @@ export function Collection() {
               marginLeft: "auto",
               marginRight: "auto",
               borderRadius: "20px",
-              width: "400px",
-              height: "260px",
+              width: "480px",
+              height: "320px",
             }}
           />
-          <Heading mx="auto">
-            {contractMetadata?.name || "Unknown collection"}
+          <Heading mx="auto" as="h1" size="2xl">
+            {contractMetadata?.name || "Loading..."}
           </Heading>
           {contractMetadata?.description && (
             <Text
@@ -69,6 +69,8 @@ export function Collection() {
             size="lg"
             mx="auto"
             mt="40px"
+            mb="20px"
+            p="10px"
             onChange={(index) => setTabIndex(index)}
             isLazy
           >

@@ -105,7 +105,7 @@ export function Token(props: Props) {
             <MediaRenderer
               client={client}
               src={nft?.metadata.image}
-              style={{ width: "max-content", height: "auto", aspectRatio: "1" }}
+              style={{ width: "max-content", height: "auto"}}
             />
             <Accordion allowMultiple defaultIndex={[0, 1, 2]}>
               {nft?.metadata.description && (
@@ -113,7 +113,9 @@ export function Token(props: Props) {
                   <Text>
                     <AccordionButton>
                       <Box as="span" flex="1" textAlign="left">
+                      <Heading as='h3' size='lg' noOfLines={1}>
                         Description
+                      </Heading>  
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
@@ -123,7 +125,7 @@ export function Token(props: Props) {
                   </AccordionPanel>
                 </AccordionItem>
               )}
-
+            
               {nft?.metadata?.attributes &&
                 // @ts-ignore TODO FIx later
                 nft?.metadata?.attributes.length > 0 && (
@@ -134,19 +136,23 @@ export function Token(props: Props) {
             </Accordion>
           </Flex>
           <Box w={{ lg: "45vw", base: "90vw" }}>
-            <Text>Collection</Text>
+          <Heading as='h3' size='lg' noOfLines={1}>
+            Collection
+          </Heading>
+          <br />
             <Flex direction="row" gap="3">
-              <Heading>{contractMetadata?.name}</Heading>
-              <Link
-                color="gray"
+            <Link
+                color="white"
                 href={`/collection/${nftContract.chain.id}/${nftContract.address}`}
               >
-                <FaExternalLinkAlt size={20} />
+              <Heading as="h5" size="sm">{contractMetadata?.name}</Heading>
+
+                {/* <FaExternalLinkAlt size={14} /> */}
               </Link>
             </Flex>
             <br />
-            <Text># {nft?.id.toString()}</Text>
-            <Heading>{nft?.metadata.name}</Heading>
+            <Text>Item Name</Text>
+            <Heading as="h5" size="sm">{nft?.metadata.name}</Heading>
             <br />
             {type === "ERC1155" ? (
               <>
@@ -161,7 +167,7 @@ export function Token(props: Props) {
               <>
                 <Text>Current owner</Text>
                 <Flex direction="row">
-                  <Heading>
+                <Heading as="h5" size="sm">
                     {nft?.owner ? shortenAddress(nft.owner) : "N/A"}{" "}
                   </Heading>
                   {ownedByYou && <Text color="gray">(You)</Text>}
@@ -183,7 +189,9 @@ export function Token(props: Props) {
                 <Text>
                   <AccordionButton>
                     <Box as="span" flex="1" textAlign="left">
+                    <Heading as='h3' size='lg' noOfLines={1}>
                       Listings ({listings.length})
+                    </Heading>  
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>

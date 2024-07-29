@@ -63,7 +63,7 @@ export function Navbar() {
             fontWeight="bold"
           >
             {/* Replace this with your own branding */}
-            marketplace.pantaleone.net
+            mintmatica.com
           </Heading>
           <Heading
             as={Link}
@@ -74,7 +74,7 @@ export function Navbar() {
             noOfLines={4}
           >
             {/* Replace this with your own branding */}
-            The latest AI tools, agents, automation scripts and NFT artwork.
+            Abstract artwork, NFT's and random digital artifacts.
           </Heading>
         </Box>
         <Box display={{ lg: "block", base: "none" }}>

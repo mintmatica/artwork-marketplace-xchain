@@ -3,8 +3,8 @@ import { Providers } from "@/components/shared/Providers";
 import { Navbar } from "@/components/shared/Navbar";
 
 export const metadata: Metadata = {
-  title: "Marketplace for AI Tools, AI Agents, Automation Scripts and NFT Artwork",
-  description: "The latest AI tools, AI agents, automation scripts and NFT artwork available from Pantaleone.net. Subscribe or pay with crypto, credit or debit card",
+  title: "Mintmatica.com - abstract artwork, NFT's and random digital artifacts.",
+  description: "Marketplace for digital artwork, NFT's, photography, and other interesting assets.",
 };
 
 export default function RootLayout({
