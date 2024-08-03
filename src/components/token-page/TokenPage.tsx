@@ -136,49 +136,6 @@ export function Token(props: Props) {
             </Accordion>
           </Flex>
           <Box w={{ lg: "45vw", base: "90vw" }}>
-          <Heading as='h3' size='lg' noOfLines={1}>
-            Collection
-          </Heading>
-          <br />
-            <Flex direction="row" gap="3">
-            <Link
-                color="white"
-                href={`/collection/${nftContract.chain.id}/${nftContract.address}`}
-              >
-              <Heading as="h5" size="sm">{contractMetadata?.name}</Heading>
-
-                {/* <FaExternalLinkAlt size={14} /> */}
-              </Link>
-            </Flex>
-            <br />
-            <Text>Item Name</Text>
-            <Heading as="h5" size="sm">{nft?.metadata.name}</Heading>
-            <br />
-            {type === "ERC1155" ? (
-              <>
-                {account && ownedQuantity1155 && (
-                  <>
-                    <Text>You own</Text>
-                    <Heading>{ownedQuantity1155.toString()}</Heading>
-                  </>
-                )}
-              </>
-            ) : (
-              <>
-                <Text>Current owner</Text>
-                <Flex direction="row">
-                <Heading as="h5" size="sm">
-                    {nft?.owner ? shortenAddress(nft.owner) : "N/A"}{" "}
-                  </Heading>
-                  {ownedByYou && <Text color="gray">(You)</Text>}
-                </Flex>
-              </>
-            )}
-            {account &&
-              nft &&
-              (ownedByYou || (ownedQuantity1155 && ownedQuantity1155 > 0n)) && (
-                <CreateListing tokenId={nft?.id} account={account} />
-              )}
             <Accordion
               mt="30px"
               sx={{ container: {} }}

@@ -63,7 +63,7 @@ export function AllNftsGrid() {
   console.log({ pages, currentPageIndex, length: pages.length });
   return (
     <>
-      <SimpleGrid columns={columns} spacing={4} p={4} mx="auto" mt="10px">
+      <SimpleGrid columns={columns} spacing={8} p={4} mx="auto" mt="10px">
         {allNFTs && allNFTs.length > 0 ? (
           allNFTs.map((item) => (
             <Box
@@ -74,7 +74,7 @@ export function AllNftsGrid() {
                 nftContract.address
               }/token/${item.id.toString()}`}
               _hover={{ textDecoration: "none" }}
-              mt="10px"
+              mt="20px"
             >
               <Flex direction="column">
                 <MediaRenderer 
@@ -82,7 +82,7 @@ export function AllNftsGrid() {
                   src={item.metadata.image} 
                   alt={contractMetadata?.name}
                 />
-                <Text as="b" fontSize="lg" mt="10px">{item.metadata?.name ?? "Unknown item"}</Text>
+                <Text as="b" fontSize="lg" mt="20px">{item.metadata?.name ?? "Unknown item"}</Text>
               </Flex>
             </Box>
           ))

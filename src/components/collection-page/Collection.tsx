@@ -68,7 +68,7 @@ export function Collection() {
             variant="soft-rounded"
             size="lg"
             mx="auto"
-            mt="40px"
+            mt="30px"
             mb="20px"
             p="10px"
             onChange={(index) => setTabIndex(index)}

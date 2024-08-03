@@ -9,6 +9,7 @@ import {
   Box,
   Flex,
   Text,
+  Heading,
 } from "@chakra-ui/react";
 import { toEther } from "thirdweb";
 import { MediaRenderer } from "thirdweb/react";
@@ -30,7 +31,9 @@ export default function RelatedListings({
       <Text>
         <AccordionButton>
           <Box as="span" flex="1" textAlign="left">
-            More from this collections
+          <Heading as='h3' size='lg' noOfLines={1}> 
+            More from this NFT collection
+          </Heading>  
           </Box>
           <AccordionIcon />
         </AccordionButton>
@@ -60,9 +63,9 @@ export default function RelatedListings({
                   client={client}
                   src={item.asset.metadata.image}
                 />
-                <Text>{item.asset.metadata?.name ?? "Unknown item"}</Text>
-                <Text>Price</Text>
-                <Text>
+                <Text as="b" fontSize="lg" mt="10px">{item.asset.metadata?.name ?? "Unknown item"}</Text>
+                <Text fontSize="sm" mt="5px">Price</Text>
+                <Text as="b" fontSize="sm">
                   {toEther(item.pricePerToken)}{" "}
                   {item.currencyValuePerToken.symbol}
                 </Text>

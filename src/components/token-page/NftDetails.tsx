@@ -34,7 +34,7 @@ export function NftDetails(props: Props) {
       <Text>
         <AccordionButton>
           <Box as="span" flex="1" textAlign="left">
-            Details
+            NFT Details
           </Box>
           <AccordionIcon />
         </AccordionButton>
@@ -42,13 +42,13 @@ export function NftDetails(props: Props) {
       <AccordionPanel pb={4}>
         <Flex direction="row" justifyContent="space-between" mb="1">
           <Text>Contract address</Text>
-          <Link color="purple" href={contractUrl} target="_blank">
+          <Link color="white" href={contractUrl} target="_blank">
             {shortenAddress(nftContract.address)}
           </Link>
         </Flex>
         <Flex direction="row" justifyContent="space-between" mb="1">
           <Text>Token ID</Text>
-          <Link color="purple" href={tokenUrl} target="_blank">
+          <Link color="white" href={tokenUrl} target="_blank">
             {nft?.id.toString()}
           </Link>
         </Flex>
