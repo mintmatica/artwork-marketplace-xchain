@@ -31,7 +31,7 @@ export default function RelatedListings({
       <Text>
         <AccordionButton>
           <Box as="span" flex="1" textAlign="left">
-          <Heading as='h3' size='lg' noOfLines={1}> 
+          <Heading as='h3' size='sm' noOfLines={1}> 
             More from this NFT collection
           </Heading>  
           </Box>
@@ -63,7 +63,7 @@ export default function RelatedListings({
                   client={client}
                   src={item.asset.metadata.image}
                 />
-                <Text as="b" fontSize="lg" mt="10px">{item.asset.metadata?.name ?? "Unknown item"}</Text>
+                <Text as="b" fontSize="lg" mt="4px">{item.asset.metadata?.name ?? "Unknown item"}</Text>
                 <Text fontSize="sm" mt="5px">Price</Text>
                 <Text as="b" fontSize="sm">
                   {toEther(item.pricePerToken)}{" "}

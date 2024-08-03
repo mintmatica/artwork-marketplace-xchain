@@ -74,7 +74,7 @@ export function AllNftsGrid() {
                 nftContract.address
               }/token/${item.id.toString()}`}
               _hover={{ textDecoration: "none" }}
-              mt="20px"
+              mt="10px"
             >
               <Flex direction="column">
                 <MediaRenderer 
@@ -82,7 +82,7 @@ export function AllNftsGrid() {
                   src={item.metadata.image} 
                   alt={contractMetadata?.name}
                 />
-                <Text as="b" fontSize="lg" mt="20px">{item.metadata?.name ?? "Unknown item"}</Text>
+                <Text as="b" fontSize="lg" mt="10px">{item.metadata?.name ?? "Unknown item"}</Text>
               </Flex>
             </Box>
           ))
@@ -93,7 +93,7 @@ export function AllNftsGrid() {
       <Box
         mx="auto"
         maxW={{ base: "90vw", lg: "700px" }}
-        mt="20px"
+        mt="10px"
         px="10px"
         py="5px"
         overflowX="auto"

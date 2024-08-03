@@ -35,7 +35,7 @@ export function ListingGrid() {
         >
           <Flex direction="column">
             <MediaRenderer client={client} src={item.asset.metadata.image} alt={item.asset.metadata?.name}/>
-            <Text as="b" fontSize="lg" mt="10px">{item.asset?.metadata?.name ?? "Unknown item"}</Text>
+            <Text as="b" fontSize="lg" mt="5px">{item.asset?.metadata?.name ?? "Unknown item"}</Text>
             <Text fontSize="sm" mt="5px">Price</Text>
             <Text as="b" fontSize="sm">
               {item.currencyValuePerToken.displayValue}{" "}

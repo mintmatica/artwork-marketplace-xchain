@@ -137,7 +137,6 @@ export function Token(props: Props) {
           </Flex>
           <Box w={{ lg: "45vw", base: "90vw" }}>
             <Accordion
-              mt="30px"
               sx={{ container: {} }}
               defaultIndex={[0, 1]}
               allowMultiple
