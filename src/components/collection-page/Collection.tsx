@@ -68,8 +68,8 @@ export function Collection() {
             variant="soft-rounded"
             size="lg"
             mx="auto"
-            mt="30px"
-            mb="20px"
+            mt="20px"
+            mb="10px"
             p="10px"
             onChange={(index) => setTabIndex(index)}
             isLazy

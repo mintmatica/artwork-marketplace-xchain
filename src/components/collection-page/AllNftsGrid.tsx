@@ -63,7 +63,7 @@ export function AllNftsGrid() {
   console.log({ pages, currentPageIndex, length: pages.length });
   return (
     <>
-      <SimpleGrid columns={columns} spacing={8} p={4} mx="auto" mt="10px">
+      <SimpleGrid columns={columns} spacing={2} p={2} mx="auto" mt="10px">
         {allNFTs && allNFTs.length > 0 ? (
           allNFTs.map((item) => (
             <Box

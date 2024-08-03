@@ -22,7 +22,7 @@ export function ListingGrid() {
   });
   if (!listingsInSelectedCollection || !len) return <></>;
   return (
-    <SimpleGrid columns={columns} spacing={8} p={4} mx="auto" mt="20px">
+    <SimpleGrid columns={columns} spacing={2} p={2} mx="auto" mt="10px">
       {listingsInSelectedCollection.map((item) => (
         <Box
           key={item.id}
