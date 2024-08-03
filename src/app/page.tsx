@@ -16,7 +16,7 @@ export default function Home() {
       <Box mt="24px" m="auto">
         <Flex direction="column" gap="4">
           <Heading as="h1" ml="20px" mt="40px">
-            Trending AI and Automation Products
+            Trending NFT Collections
           </Heading>
           <Flex
             direction="row"

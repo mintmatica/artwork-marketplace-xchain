@@ -24,7 +24,7 @@ export const NFT_CONTRACTS: NftContract[] = [
     chain: polygon,
     title: "Mini Color Drips",
     thumbnailUrl:
-      "https://ipfs.io/ipfs/bafybeifyvjfoaj3haikihzuu4o7jydqx4t2sqp5vk5vdr7f3kfxfsvf3b4/colordrips5.png",
+      "https://pantaleone-net.s3.us-west-1.amazonaws.com/photo-t5mfrqgo.png",
     type: "ERC721",
   },
   // {
