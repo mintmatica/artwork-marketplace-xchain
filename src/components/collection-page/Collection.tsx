@@ -37,7 +37,7 @@ export function Collection() {
     contractMetadata?.image || firstNFT?.metadata.image || "";
   return (
     <>
-      <Box mt="10px">
+      <Box mt="5px">
         <Flex direction="column" gap="2">
           <MediaRenderer
             client={client}
@@ -52,7 +52,7 @@ export function Collection() {
             }}
           />
           <Heading mx="auto" as="h1" size="2xl">
-            {contractMetadata?.name || "Loading..."}
+            {contractMetadata?.name || "Loading NFT's..."}
           </Heading>
           {contractMetadata?.description && (
             <Text
@@ -68,8 +68,8 @@ export function Collection() {
             variant="soft-rounded"
             size="lg"
             mx="auto"
-            mt="20px"
-            mb="10px"
+            mt="10px"
+            mb="5px"
             p="10px"
             onChange={(index) => setTabIndex(index)}
             isLazy

@@ -74,7 +74,7 @@ export function AllNftsGrid() {
                 nftContract.address
               }/token/${item.id.toString()}`}
               _hover={{ textDecoration: "none" }}
-              mt="10px"
+              mt="4px"
             >
               <Flex direction="column">
                 <MediaRenderer 
