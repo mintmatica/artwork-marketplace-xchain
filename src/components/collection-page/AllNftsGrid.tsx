@@ -68,7 +68,7 @@ export function AllNftsGrid() {
           allNFTs.map((item) => (
             <Box
               key={item.id}
-              rounded="20px"
+              rounded="12px"
               as={Link}
               href={`/collection/${nftContract.chain.id}/${
                 nftContract.address
@@ -79,6 +79,7 @@ export function AllNftsGrid() {
                 <MediaRenderer 
                   client={client} 
                   src={item.metadata.image} 
+                  alt={contractMetadata?.name}
                 />
                 <Text as="b" fontSize="lg">{item.metadata?.name ?? "Unknown item"}</Text>
               </Flex>
