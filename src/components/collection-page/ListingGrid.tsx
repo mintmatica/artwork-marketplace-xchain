@@ -34,7 +34,7 @@ export function ListingGrid() {
           _hover={{ textDecoration: "none" }}
         >
           <Flex direction="column">
-            <MediaRenderer client={client} src={item.asset.metadata.image} alt={item.asset.metadata?.name}/>
+            <MediaRenderer height="200px" client={client} src={item.asset.metadata.image} alt={item.asset.metadata?.name}/>
             <Text as="b" fontSize="lg">{item.asset?.metadata?.name ?? "Unknown item"}</Text>
             <Text fontSize="sm">Price</Text>
             <Text as="b" fontSize="sm">

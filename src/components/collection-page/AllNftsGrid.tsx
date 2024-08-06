@@ -76,7 +76,8 @@ export function AllNftsGrid() {
               _hover={{ textDecoration: "none" }}
             >
               <Flex direction="column">
-                <MediaRenderer 
+                <MediaRenderer
+                  height="200px"
                   client={client} 
                   src={item.metadata.image} 
                   alt={contractMetadata?.name} />
