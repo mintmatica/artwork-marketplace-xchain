@@ -22,7 +22,7 @@ export function ListingGrid() {
   });
   if (!listingsInSelectedCollection || !len) return <></>;
   return (
-    <SimpleGrid columns={columns} spacing={2} p={2} mx="auto" mt="4px">
+    <SimpleGrid columns={columns} spacing={4} p={4} mx="auto" mt="4px">
       {listingsInSelectedCollection.map((item) => (
         <Box
           key={item.id}
@@ -36,7 +36,7 @@ export function ListingGrid() {
           <Flex direction="column">
             <MediaRenderer client={client} src={item.asset.metadata.image} alt={item.asset.metadata?.name}/>
             <Text as="b" fontSize="lg">{item.asset?.metadata?.name ?? "Unknown item"}</Text>
-            <Text fontSize="sm" mt="5px">Price</Text>
+            <Text fontSize="sm">Price</Text>
             <Text as="b" fontSize="sm">
               {item.currencyValuePerToken.displayValue}{" "}
               {item.currencyValuePerToken.symbol}
