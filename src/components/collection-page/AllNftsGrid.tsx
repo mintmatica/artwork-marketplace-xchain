@@ -79,7 +79,6 @@ export function AllNftsGrid() {
                 <MediaRenderer 
                   client={client} 
                   src={item.metadata.image} 
-                  alt={contractMetadata?.name}
                 />
                 <Text as="b" fontSize="lg">{item.metadata?.name ?? "Unknown item"}</Text>
               </Flex>
