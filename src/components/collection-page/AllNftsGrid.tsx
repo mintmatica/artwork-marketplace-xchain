@@ -79,8 +79,7 @@ export function AllNftsGrid() {
                 <MediaRenderer 
                   client={client} 
                   src={item.metadata.image} 
-                  alt={contractMetadata?.name}
-                />
+                  alt={contractMetadata?.name} />
                 <Text as="b" fontSize="lg">{item.metadata?.name ?? "Unknown item"}</Text>
               </Flex>
             </Box>
@@ -92,7 +91,7 @@ export function AllNftsGrid() {
       <Box
         mx="auto"
         maxW={{ base: "90vw", lg: "700px" }}
-        mt="10px"
+        mt="20px"
         px="10px"
         py="5px"
         overflowX="auto"

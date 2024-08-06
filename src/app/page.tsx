@@ -21,20 +21,20 @@ export default function Home() {
           <Flex
             direction="row"
             wrap="wrap"
-            mt="20px"
+            mt="10px"
             gap="5"
             justifyContent="space-evenly"
           >
             {NFT_CONTRACTS.map((item) => (
               <Link
                 _hover={{ textDecoration: "none" }}
-                w={300}
-                h={400}
+                w={280}
+                h={200}
                 key={item.address}
                 href={`/collection/${item.chain.id.toString()}/${item.address}`}
               >
                 <Image src={item.thumbnailUrl} alt={item.title} boxSize="280px" borderRadius="10px" mb="10px"/>
-                <Text as="b" fontSize="lg" mt="20px">
+                <Text as="b" fontSize="lg" mt="10px">
                   {item.title}
                 </Text>
               </Link>
