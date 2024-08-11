@@ -8,17 +8,7 @@ import { useState } from "react";
 import { useMarketplaceContext } from "@/hooks/useMarketplaceContext";
 import { ListingGrid } from "./ListingGrid";
 import { AllNftsGrid } from "./AllNftsGrid";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Mintmatica.com - Collection Overview",
-  description: "Digital artwork collections available to buy at Mintmatica.com",
-  openGraph: {
-    title: "Mintmatica.com - Collection Overview",
-    description: "Digital artwork collections available to buy at Mintmatica.com",
-      images: ["../android-chrome-512x512.png"],
-  },
-};
 export function Collection() {
   // `0` is Listings, `1` is `Auctions`
   const [tabIndex, setTabIndex] = useState<number>(0);
