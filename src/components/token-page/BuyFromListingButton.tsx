@@ -106,7 +106,7 @@ export default function BuyFromListingButton(props: Props) {
 				}
 			}}
 		>
-			Buy
+			Buy Now
 		</Button>
 	);
 }

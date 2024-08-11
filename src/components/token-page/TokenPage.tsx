@@ -107,21 +107,80 @@ export function Token(props: Props) {
               src={nft?.metadata.image}
               style={{ width: "max-content", height: "auto"}}
             />
-            <Accordion allowMultiple defaultIndex={[0, 1, 2]}>
+
+            <Accordion allowMultiple allowToggle defaultIndex={[0, 1, 2]}>
               {nft?.metadata.description && (
+                
                 <AccordionItem>
                   <Text>
                     <AccordionButton>
                       <Box as="span" flex="1" textAlign="left">
-                      <Heading as='h3' size='lg' noOfLines={1}>
-                        Description
-                      </Heading>  
+                      <Heading as='h3' size='md' noOfLines={1}>{nft.metadata.name} </Heading> 
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
                   </Text>
                   <AccordionPanel pb={4}>
-                    <Text>{nft.metadata.description}</Text>
+                    <Text pb={4}>{nft.metadata.description}</Text>
+                    {listings.length > 0 ? (
+                    <TableContainer>
+                      <Table
+                       
+                        size="sm"
+                        variant="simple"
+                        overflow="auto"
+                        sx={{ "th, td": { borderBottom: "none" } }}
+                      >
+                        <Thead>
+                          <Tr>
+                            <Th>Price</Th>
+                            {type === "ERC1155" && <Th>Qty</Th>}
+                            <Th>{""}</Th>
+                          </Tr>
+                        </Thead>
+                        <Tbody>
+                          {listings.map((item) => {
+                            const listedByYou =
+                              item.creatorAddress.toLowerCase() ===
+                              account?.address.toLowerCase();
+                            return (
+                              <Tr key={item.id.toString()}>
+                                <Td>
+                                  <Text>
+                                    {item.currencyValuePerToken.displayValue}{" "}
+                                    {item.currencyValuePerToken.symbol}
+                                  </Text>
+                                </Td>
+                                {type === "ERC1155" && (
+                                  <Td>
+                                    <Text>{item.quantity.toString()}</Text>
+                                  </Td>
+                                )}
+
+                                {account && (
+                                  <Td>
+                                    {!listedByYou ? (
+                                      <BuyFromListingButton
+                                        account={account}
+                                        listing={item}
+                                      />
+                                    ) : (
+                                      <CancelListingButton
+                                        account={account}
+                                        listingId={item.id}
+                                      />
+                                    )}
+                                  </Td>
+                                )}
+                              </Tr>
+                            );
+                          })}
+                        </Tbody>
+                      </Table>
+                    </TableContainer>
+                  ) : (
+                    <Text>This item is not listed for sale</Text>
+                  )}
                   </AccordionPanel>
                 </AccordionItem>
               )}
@@ -145,7 +204,7 @@ export function Token(props: Props) {
                 <Text>
                   <AccordionButton>
                     <Box as="span" flex="1" textAlign="left">
-                    <Heading as='h3' size='lg' noOfLines={1}>
+                    <Heading as='h3' size='md' noOfLines={1}>
                       Listings ({listings.length})
                     </Heading>  
                     </Box>
@@ -156,7 +215,9 @@ export function Token(props: Props) {
                   {listings.length > 0 ? (
                     <TableContainer>
                       <Table
+                        size="sm"
                         variant="simple"
+                        overflow="auto"
                         sx={{ "th, td": { borderBottom: "none" } }}
                       >
                         <Thead>

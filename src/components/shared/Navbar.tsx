@@ -63,7 +63,7 @@ export function Navbar() {
             fontWeight="bold"
           >
             {/* Replace this with your own branding */}
-            mintmatica.com
+            mintmatica
           </Heading>
           <Heading
             as={Link}

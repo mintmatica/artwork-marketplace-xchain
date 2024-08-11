@@ -31,8 +31,8 @@ export default function RelatedListings({
       <Text>
         <AccordionButton>
           <Box as="span" flex="1" textAlign="left">
-          <Heading as='h3' size='sm' noOfLines={1}> 
-            More from this NFT collection
+          <Heading as='h3' size='md' noOfLines={1}> 
+            Related NFT's
           </Heading>  
           </Box>
           <AccordionIcon />

@@ -5,6 +5,7 @@ import {
   AccordionPanel,
   Box,
   Card,
+  Collapse,
   Flex,
   Text,
 } from "@chakra-ui/react";
