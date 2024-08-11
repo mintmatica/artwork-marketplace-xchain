@@ -8,7 +8,6 @@ import {
   Box,
   Flex,
   Heading,
-  Link,
   Table,
   TableContainer,
   Tbody,
@@ -190,7 +189,6 @@ export function Token(props: Props) {
                 nft?.metadata?.attributes.length > 0 && (
                   <NftAttributes attributes={nft.metadata.attributes} />
                 )}
-
               {nft && <NftDetails nft={nft} />}
             </Accordion>
           </Flex>
